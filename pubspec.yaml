@@ -24,8 +24,13 @@ dev_dependencies:
     sdk: flutter
 
   flutter_lints: ^2.0.1
+  flutter_native_splash: ^2.2.14
 
 flutter:
   uses-material-design: true
   assets:
     - assets/images/
+
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/images/gits-dark.png
