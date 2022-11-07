@@ -1,0 +1,31 @@
+name: gits_flutter_ui_component
+description: A new Flutter project.
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.18.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  go_router: ^5.1.5
+  flutter_bloc: ^8.1.1
+  device_frame: ^1.1.0
+  flutter_syntax_view:
+    git:
+      url: https://github.com/YehudaKremer/flutter_syntax_view.git
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
