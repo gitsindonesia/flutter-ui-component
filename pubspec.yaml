@@ -11,10 +11,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
 
   go_router: ^5.1.5
   flutter_bloc: ^8.1.1
   device_frame: ^1.1.0
+  collection: ^1.16.0
   flutter_syntax_view:
     git:
       url: https://github.com/YehudaKremer/flutter_syntax_view.git
