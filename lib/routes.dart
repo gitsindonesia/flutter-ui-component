@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gits_flutter_ui_component/main_page.dart';
+import 'package:gits_flutter_ui_component/pages/component/empty_state/empty_state.dart';
+import 'package:gits_flutter_ui_component/pages/component/shimmer/shimmer.dart';
+import 'package:gits_flutter_ui_component/pages/component/spacing/spacing.dart';
 import 'package:gits_flutter_ui_component/pages/component/text/text.dart';
 import 'package:gits_flutter_ui_component/pages/foundation/typography/typhography_page.dart';
 import 'package:gits_flutter_ui_component/pages/pages/splash/splash_page.dart';
@@ -40,6 +43,24 @@ abstract class Routes {
           label: 'Text',
           icon: const Icon(Icons.text_fields),
           child: const TextPage(),
+        ),
+        Navigation(
+          path: '/shimmer',
+          label: 'Shimmer',
+          icon: const Icon(Icons.cached),
+          child: const Shimmer(),
+        ),
+        Navigation(
+          path: '/spacing',
+          label: 'Spacing',
+          icon: const Icon(Icons.density_large),
+          child: const Spacing(),
+        ),
+        Navigation(
+          path: '/empty-state',
+          label: 'Empty State',
+          icon: const Icon(Icons.layers),
+          child: const EmptyState(),
         ),
       ],
     ),
