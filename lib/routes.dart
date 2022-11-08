@@ -67,7 +67,8 @@ abstract class Routes {
             for (final navigation in category.navigations)
               GoRoute(
                 path: navigation.path,
-                builder: (context, state) => navigation.child,
+                pageBuilder: (context, state) =>
+                    NoTransitionPage(child: navigation.child),
               ),
         ],
       ),
