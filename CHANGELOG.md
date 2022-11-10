@@ -2,6 +2,8 @@
 
 - add references how to contribute
 - add contributors
+- add search on side menu
+- remove unused platform
 
 ## 0.4.0
 
