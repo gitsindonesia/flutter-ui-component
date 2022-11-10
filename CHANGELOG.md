@@ -1,3 +1,9 @@
+## 0.6.0
+
+- add component gits column separated
+- add component gits row separated
+- add component gits divider dash
+
 ## 0.5.0
 
 - add references how to contribute
