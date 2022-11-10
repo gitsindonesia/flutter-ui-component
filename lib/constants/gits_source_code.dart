@@ -1,8 +1,4 @@
 abstract class GitsSourceCode {
-  static const String codeSnippetEmptyState = '''Scaffold(
-          appBar: AppBar(title: const Text("Gits")),
-          body: const GitsEmptyState(text: "Belum ada data yang diinputkan"),
-        ),''';
   static const String codeSnippetShimmer = '''GitsShimmer(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,

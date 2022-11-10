@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gits_flutter_ui_component/main_page.dart';
-import 'package:gits_flutter_ui_component/pages/component/empty_state/empty_state.dart';
+import 'package:gits_flutter_ui_component/pages/component/empty_state/empty_state_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/shimmer/shimmer.dart';
 import 'package:gits_flutter_ui_component/pages/component/spacing/spacing_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/text/text.dart';
@@ -60,7 +60,7 @@ abstract class Routes {
           path: '/empty-state',
           label: 'Empty State',
           icon: const Icon(Icons.layers),
-          child: const EmptyState(),
+          child: const EmptyStatePage(),
         ),
       ],
     ),
