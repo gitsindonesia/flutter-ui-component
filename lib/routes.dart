@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gits_flutter_ui_component/main_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/empty_state/empty_state_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_column_separated/gits_column_separated_page.dart';
+import 'package:gits_flutter_ui_component/pages/component/gits_row_separated/gits_row_separated_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/shimmer/shimmer_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/spacing/spacing_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/text/text.dart';
@@ -83,6 +84,12 @@ abstract class Routes {
           label: 'Gits Column Separated',
           icon: const Icon(Icons.table_rows),
           child: const GitsColumnSeparatedPage(),
+        ),
+        Navigation(
+          path: '/gits-row-separated',
+          label: 'Gits Row Separated',
+          icon: const Icon(Icons.view_column),
+          child: const GitsRowSeparatedPage(),
         ),
       ],
     ),

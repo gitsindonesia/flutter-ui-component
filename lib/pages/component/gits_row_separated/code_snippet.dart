@@ -1,9 +1,9 @@
-const String codeSnippetGitsColumnSeparated = '''import 'dart:math' as math;
+const String codeSnippetGitsRowSeparated = '''import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
-class GitsColumnSeparated extends StatelessWidget {
-  const GitsColumnSeparated({
+class GitsRowSeparated extends StatelessWidget {
+  const GitsRowSeparated({
     Key? key,
     required this.itemBuilder,
     required this.separatorBuilder,
@@ -28,7 +28,7 @@ class GitsColumnSeparated extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
       mainAxisAlignment: mainAxisAlignment,
       crossAxisAlignment: crossAxisAlignment,
       mainAxisSize: mainAxisSize,
@@ -49,15 +49,17 @@ class GitsColumnSeparated extends StatelessWidget {
   }
 }''';
 
-const String codeSnippetExampleGitsColumnSeparated = '''Scaffold(
-  appBar: AppBar(title: const Text('Example')),
-  body: SingleChildScrollView(
-    padding: const EdgeInsets.all(16),
-    child: GitsColumnSeparated(
-      itemBuilder: (context, index) => Text('Item \$index'),
-      separatorBuilder: (context, index) =>
-          const GitsSpacing.vertical16(),
-      itemCount: 10,
+const String codeSnippetExampleGitsRowSeparated = '''Scaffold(
+    appBar: AppBar(title: const Text('Example')),
+    body: SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      padding: const EdgeInsets.all(16),
+      child: GitsRowSeparated(
+        itemBuilder: (context, index) => Text('Item \$index'),
+        separatorBuilder: (context, index) =>
+            const GitsSpacing.horizontal16(),
+        itemCount: 10,
+      ),
     ),
   ),
 )''';
