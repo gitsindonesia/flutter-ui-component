@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gits_flutter_ui_component/widgets/gits_spacing.dart';
 import 'package:gits_flutter_ui_component/widgets/scaffold_page.dart';
 
 class TyphographyPage extends StatelessWidget {
@@ -68,7 +69,7 @@ class TyphographyPage extends StatelessWidget {
           'Body Small',
           style: Theme.of(context).textTheme.bodySmall,
         ),
-        const SizedBox(height: 16),
+        const GitsSpacing.vertical16(),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: DataTable(

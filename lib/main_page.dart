@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gits_flutter_ui_component/constants/gits_images.dart';
 import 'package:gits_flutter_ui_component/cubit/global_cubit.dart';
+import 'package:gits_flutter_ui_component/widgets/gits_spacing.dart';
 import 'package:gits_flutter_ui_component/widgets/navigation_menu.dart';
 
 import 'routes.dart';
@@ -35,7 +36,7 @@ class MainPage extends StatelessWidget {
                 },
               );
             }),
-            const SizedBox(height: 16),
+            const GitsSpacing.vertical16(),
             const Text('GITS Indonesia, 2022'),
           ],
         ),

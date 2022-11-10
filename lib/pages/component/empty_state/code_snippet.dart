@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+const String codeSnippetGitsEmptyState =
+    '''import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gits_flutter_ui_component/constants/gits_sizes.dart';
 import 'package:gits_flutter_ui_component/constants/gits_svg.dart';
@@ -52,3 +53,9 @@ class GitsEmptyState extends StatelessWidget {
     );
   }
 }
+''';
+
+const String codeSnippetEmptyState = '''Scaffold(
+  appBar: AppBar(title: const Text("Gits")),
+  body: const GitsEmptyState(text: "Belum ada data yang diinputkan"),
+),''';

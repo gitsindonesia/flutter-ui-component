@@ -7,6 +7,7 @@ import 'package:flutter_syntax_view/flutter_syntax_view.dart';
 import 'package:gits_flutter_ui_component/cubit/global_cubit.dart';
 import 'package:gits_flutter_ui_component/extensions/text_theme_extension.dart';
 import 'package:gits_flutter_ui_component/widgets/card_properties.dart';
+import 'package:gits_flutter_ui_component/widgets/gits_spacing.dart';
 
 class DeviceHighlight extends StatefulWidget {
   const DeviceHighlight({
@@ -69,9 +70,9 @@ class _DeviceHighlightState extends State<DeviceHighlight>
                   ),
                 ),
               ),
-              const SizedBox(width: 16),
+              const GitsSpacing.horizontal16(),
               const VerticalDivider(thickness: 1, width: 1),
-              const SizedBox(width: 16),
+              const GitsSpacing.horizontal16(),
               if (!isOpenProperties)
                 Column(
                   children: [
@@ -113,7 +114,7 @@ class _DeviceHighlightState extends State<DeviceHighlight>
                               },
                               icon: const Icon(Icons.keyboard_arrow_right),
                             ),
-                            const SizedBox(width: 8),
+                            const GitsSpacing.horizontal8(),
                             Text(
                               'Properties',
                               style: context.titleMedium?.copyWith(
@@ -122,7 +123,7 @@ class _DeviceHighlightState extends State<DeviceHighlight>
                             ),
                           ],
                         ),
-                        const SizedBox(height: 8),
+                        const GitsSpacing.vertical8(),
                         CardProperties(
                           title: 'Theme Mode',
                           selected: themeModeSimulation.name,
@@ -139,7 +140,7 @@ class _DeviceHighlightState extends State<DeviceHighlight>
                                 );
                           },
                         ),
-                        const SizedBox(height: 8),
+                        const GitsSpacing.vertical8(),
                         CardProperties(
                           title: 'Orientation',
                           selected: orientationSimulation.name,
@@ -158,7 +159,7 @@ class _DeviceHighlightState extends State<DeviceHighlight>
                                 );
                           },
                         ),
-                        const SizedBox(height: 8),
+                        const GitsSpacing.vertical8(),
                         CardProperties(
                           title: 'Frames',
                           selected: isFrameVisibleSimulation
@@ -176,7 +177,7 @@ class _DeviceHighlightState extends State<DeviceHighlight>
                                 );
                           },
                         ),
-                        const SizedBox(height: 8),
+                        const GitsSpacing.vertical8(),
                         CardProperties(
                           title: 'Devices',
                           selected: deviceInfoSimulation.name,
@@ -193,7 +194,7 @@ class _DeviceHighlightState extends State<DeviceHighlight>
                           },
                         ),
                         if (widget.properties?.isNotEmpty ?? false) ...[
-                          const SizedBox(height: 8),
+                          const GitsSpacing.vertical8(),
                           ...widget.properties!,
                         ],
                       ],
