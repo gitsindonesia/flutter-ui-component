@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gits_flutter_ui_component/extensions/text_theme_extension.dart';
+import 'package:gits_flutter_ui_component/widgets/gits_spacing.dart';
 
 class CardProperties extends StatelessWidget {
   const CardProperties({
@@ -37,7 +38,7 @@ class CardProperties extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 8),
+              const GitsSpacing.vertical8(),
               Wrap(
                 runSpacing: 8,
                 spacing: 8,

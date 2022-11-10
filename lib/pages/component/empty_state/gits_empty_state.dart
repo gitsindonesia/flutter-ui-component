@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gits_flutter_ui_component/constants/gits_sizes.dart';
 import 'package:gits_flutter_ui_component/extensions/text_theme_extension.dart';
-import 'package:gits_flutter_ui_component/pages/component/spacing/gits_spacing.dart';
+import 'package:gits_flutter_ui_component/widgets/gits_spacing.dart';
 
 class GitsEmptyState extends StatelessWidget {
   const GitsEmptyState({

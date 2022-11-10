@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gits_flutter_ui_component/main_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/empty_state/empty_state.dart';
 import 'package:gits_flutter_ui_component/pages/component/shimmer/shimmer.dart';
-import 'package:gits_flutter_ui_component/pages/component/spacing/spacing.dart';
+import 'package:gits_flutter_ui_component/pages/component/spacing/spacing_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/text/text.dart';
 import 'package:gits_flutter_ui_component/pages/foundation/typography/typhography_page.dart';
 import 'package:gits_flutter_ui_component/pages/pages/splash/splash_page.dart';
@@ -54,7 +54,7 @@ abstract class Routes {
           path: '/spacing',
           label: 'Spacing',
           icon: const Icon(Icons.density_large),
-          child: const Spacing(),
+          child: const SpacingPage(),
         ),
         Navigation(
           path: '/empty-state',

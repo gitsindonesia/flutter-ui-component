@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gits_flutter_ui_component/constants/gits_sizes.dart';
 import 'package:gits_flutter_ui_component/constants/gits_source_code.dart';
-import 'package:gits_flutter_ui_component/widgets/device_highlight.dart';
 import 'package:gits_flutter_ui_component/pages/component/shimmer/gits_shimmer.dart';
-import 'package:gits_flutter_ui_component/pages/component/spacing/gits_spacing.dart';
+import 'package:gits_flutter_ui_component/widgets/device_highlight.dart';
+import 'package:gits_flutter_ui_component/widgets/gits_spacing.dart';
 import 'package:gits_flutter_ui_component/widgets/scaffold_page.dart';
 
 class Shimmer extends StatelessWidget {
