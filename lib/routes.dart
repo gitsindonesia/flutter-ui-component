@@ -8,6 +8,7 @@ import 'package:gits_flutter_ui_component/pages/foundation/typography/typhograph
 import 'package:gits_flutter_ui_component/pages/pages/splash/splash_page.dart';
 import 'package:gits_flutter_ui_component/pages/references/how_to_contribute/how_to_contribute_page.dart';
 import 'package:gits_flutter_ui_component/pages/started/changelog/changelog_page.dart';
+import 'package:gits_flutter_ui_component/pages/started/contributors/contributors_page.dart';
 import 'package:gits_flutter_ui_component/pages/started/home/home_page.dart';
 import 'package:go_router/go_router.dart';
 
@@ -29,6 +30,12 @@ abstract class Routes {
           label: 'Changelog',
           icon: const Icon(Icons.history),
           child: const ChangelogPage(),
+        ),
+        Navigation(
+          path: '/contributors',
+          label: 'Contributors',
+          icon: const Icon(Icons.groups),
+          child: const ContributorsPage(),
         ),
       ],
     ),

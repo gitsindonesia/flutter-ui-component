@@ -1,3 +1,8 @@
+## 0.5.0
+
+- add references how to contribute
+- add contributors
+
 ## 0.4.0
 
 - add changelog & show changelog

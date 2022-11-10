@@ -3,7 +3,7 @@ description: A new Flutter project.
 
 publish_to: "none"
 
-version: 0.4.0+1
+version: 0.5.0+1
 
 environment:
   sdk: ">=2.18.2 <3.0.0"
@@ -47,6 +47,7 @@ flutter:
     - assets/svg/
     - assets/markdown/
     - CHANGELOG.md
+    - Contributors.md
 
 flutter_native_splash:
   color: "#ffffff"
