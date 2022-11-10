@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gits_flutter_ui_component/extensions/text_theme_extension.dart';
+import 'package:gits_flutter_ui_component/pages/component/text/code_snippet.dart';
 import 'package:gits_flutter_ui_component/widgets/card_highlight.dart';
 import 'package:gits_flutter_ui_component/widgets/scaffold_page.dart';
+import 'package:gits_flutter_ui_component/widgets/short_description.dart';
 
 class TextPage extends StatelessWidget {
   const TextPage({super.key});
@@ -10,151 +12,113 @@ class TextPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScaffoldPage(
       children: [
+        const CardHighlight(
+          codeSnippet: codeSnippetTextThemeExtension,
+          child: ShortDescription(
+            title: 'Text Theme Extension',
+            description: 'Create extension for TextTheme',
+          ),
+        ),
         CardHighlight(
-          codeSnippet: '''Text(
-  'Display Large',
-  style: context.displayLarge,
-)''',
+          codeSnippet: codeSnippetTextDisplayLarge,
           child: Text(
             'Display Large',
             style: context.displayLarge,
           ),
         ),
         CardHighlight(
-          codeSnippet: '''Text(
-  'Display Medium',
-  style: context.displayMedium,
-)''',
+          codeSnippet: codeSnippetTextDisplayMedium,
           child: Text(
             'Display Medium',
             style: context.displayMedium,
           ),
         ),
         CardHighlight(
-          codeSnippet: '''Text(
-  'Display Small',
-  style: context.displaySmall,
-)''',
+          codeSnippet: codeSnippetTextDisplaySmall,
           child: Text(
             'Display Small',
             style: context.displaySmall,
           ),
         ),
         CardHighlight(
-          codeSnippet: '''Text(
-  'Headline Large',
-  style: context.headlineLarge,
-)''',
+          codeSnippet: codeSnippetTextHeadlineLarge,
           child: Text(
             'Headline Large',
             style: context.headlineLarge,
           ),
         ),
         CardHighlight(
-          codeSnippet: '''Text(
-  'Headline Medium',
-  style: context.headlineMedium,
-)''',
+          codeSnippet: codeSnippetTextHeadlineMedium,
           child: Text(
             'Headline Medium',
             style: context.headlineMedium,
           ),
         ),
         CardHighlight(
-          codeSnippet: '''Text(
-  'Headline Small',
-  style: context.headlineSmall,
-)''',
+          codeSnippet: codeSnippetTextHeadlineSmall,
           child: Text(
             'Headline Small',
             style: context.headlineSmall,
           ),
         ),
         CardHighlight(
-          codeSnippet: '''Text(
-  'Title Large',
-  style: context.titleLarge,
-)''',
+          codeSnippet: codeSnippetTextTitleLarge,
           child: Text(
             'Title Large',
             style: context.titleLarge,
           ),
         ),
         CardHighlight(
-          codeSnippet: '''Text(
-  'Title Medium',
-  style: context.titleMedium,
-)''',
+          codeSnippet: codeSnippetTextTitleMedium,
           child: Text(
             'Title Medium',
             style: context.titleMedium,
           ),
         ),
         CardHighlight(
-          codeSnippet: '''Text(
-  'Title Small',
-  style: context.titleSmall,
-)''',
+          codeSnippet: codeSnippetTextTitleSmall,
           child: Text(
             'Title Small',
             style: context.titleSmall,
           ),
         ),
         CardHighlight(
-          codeSnippet: '''Text(
-  'Label Large',
-  style: context.labelLarge,
-)''',
+          codeSnippet: codeSnippetTextLabelLarge,
           child: Text(
             'Label Large',
             style: context.labelLarge,
           ),
         ),
         CardHighlight(
-          codeSnippet: '''Text(
-  'Label Medium',
-  style: context.labelMedium,
-)''',
+          codeSnippet: codeSnippetTextLabelMedium,
           child: Text(
             'Label Medium',
             style: context.labelMedium,
           ),
         ),
         CardHighlight(
-          codeSnippet: '''Text(
-  'Label Small',
-  style: context.labelSmall,
-)''',
+          codeSnippet: codeSnippetTextLabelSmall,
           child: Text(
             'Label Small',
             style: context.labelSmall,
           ),
         ),
         CardHighlight(
-          codeSnippet: '''Text(
-  'Body Large',
-  style: context.bodyLarge,
-)''',
+          codeSnippet: codeSnippetTextBodyLarge,
           child: Text(
             'Body Large',
             style: context.bodyLarge,
           ),
         ),
         CardHighlight(
-          codeSnippet: '''Text(
-  'Body Medium',
-  style: context.bodyMedium,
-)''',
+          codeSnippet: codeSnippetTextBodyMedium,
           child: Text(
             'Body Medium',
             style: context.bodyMedium,
           ),
         ),
         CardHighlight(
-          codeSnippet: '''Text(
-  'Body Small',
-  style: context.bodySmall,
-)''',
+          codeSnippet: codeSnippetTextBodySmall,
           child: Text(
             'Body Small',
             style: context.bodySmall,
