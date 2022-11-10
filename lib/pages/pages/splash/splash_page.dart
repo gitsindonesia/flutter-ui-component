@@ -10,6 +10,7 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScaffoldPage(
+      appBar: AppBar(title: const Text('Splash Screen')),
       children: [
         DeviceHighlight(
           codeSnippet: codeSnippetSplashPage,

@@ -13,6 +13,7 @@ class EmptyStatePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScaffoldPage(
+      appBar: AppBar(title: const Text('Empty State')),
       children: [
         const CardHighlight(
           codeSnippet: codeSnippetGitsEmptyState,

@@ -27,8 +27,16 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp.router(
       title: 'Gits Flutter UI Component',
-      theme: ThemeData.light(),
-      darkTheme: ThemeData.dark(),
+      theme: ThemeData.light().copyWith(
+        appBarTheme: const AppBarTheme(
+          centerTitle: false,
+        ),
+      ),
+      darkTheme: ThemeData.dark().copyWith(
+        appBarTheme: const AppBarTheme(
+          centerTitle: false,
+        ),
+      ),
       themeMode: themeMode,
       routeInformationParser: routes.routeInformationParser,
       routeInformationProvider: routes.routeInformationProvider,
