@@ -14,6 +14,7 @@ class SpacingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScaffoldPage(
+      appBar: AppBar(title: const Text('Spacing')),
       children: [
         const CardHighlight(
           codeSnippet: codeSnippetGitsSizes,

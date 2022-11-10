@@ -11,6 +11,7 @@ class TextPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScaffoldPage(
+      appBar: AppBar(title: const Text('Text')),
       children: [
         const CardHighlight(
           codeSnippet: codeSnippetTextThemeExtension,

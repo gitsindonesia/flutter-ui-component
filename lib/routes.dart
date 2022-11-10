@@ -6,7 +6,8 @@ import 'package:gits_flutter_ui_component/pages/component/spacing/spacing_page.d
 import 'package:gits_flutter_ui_component/pages/component/text/text.dart';
 import 'package:gits_flutter_ui_component/pages/foundation/typography/typhography_page.dart';
 import 'package:gits_flutter_ui_component/pages/pages/splash/splash_page.dart';
-import 'package:gits_flutter_ui_component/pages/started/home/home_pages.dart';
+import 'package:gits_flutter_ui_component/pages/started/changelog/changelog_page.dart';
+import 'package:gits_flutter_ui_component/pages/started/home/home_page.dart';
 import 'package:go_router/go_router.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
@@ -21,6 +22,12 @@ abstract class Routes {
           label: 'Home',
           icon: const Icon(Icons.home),
           child: const HomePage(),
+        ),
+        Navigation(
+          path: '/changelog',
+          label: 'Changelog',
+          icon: const Icon(Icons.history),
+          child: const ChangelogPage(),
         ),
       ],
     ),

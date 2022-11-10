@@ -15,6 +15,7 @@ class ShimmerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScaffoldPage(
+      appBar: AppBar(title: const Text('Shimmer')),
       children: [
         const CardHighlight(
           codeSnippet: codeSnippetGitsShimmer,
