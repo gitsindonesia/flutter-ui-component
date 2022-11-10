@@ -6,6 +6,7 @@ import 'package:gits_flutter_ui_component/pages/component/spacing/spacing_page.d
 import 'package:gits_flutter_ui_component/pages/component/text/text.dart';
 import 'package:gits_flutter_ui_component/pages/foundation/typography/typhography_page.dart';
 import 'package:gits_flutter_ui_component/pages/pages/splash/splash_page.dart';
+import 'package:gits_flutter_ui_component/pages/references/how_to_contribute/how_to_contribute_page.dart';
 import 'package:gits_flutter_ui_component/pages/started/changelog/changelog_page.dart';
 import 'package:gits_flutter_ui_component/pages/started/home/home_page.dart';
 import 'package:go_router/go_router.dart';
@@ -79,6 +80,17 @@ abstract class Routes {
           label: 'Splash',
           icon: const Icon(Icons.splitscreen),
           child: const SplashPage(),
+        ),
+      ],
+    ),
+    CategoryNavigation(
+      category: 'References',
+      navigations: [
+        Navigation(
+          path: '/how-to-contribute',
+          label: 'How To Contribute',
+          icon: const Icon(Icons.volunteer_activism),
+          child: const HowToContributePage(),
         ),
       ],
     ),
