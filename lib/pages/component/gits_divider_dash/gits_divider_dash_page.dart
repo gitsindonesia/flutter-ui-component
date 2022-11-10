@@ -23,7 +23,7 @@ class GitsDividerDashPage extends StatelessWidget {
             children: const [
               ShortDescription(
                 title: 'GitsDividerDash',
-                description: '',
+                description: 'Component divider with dash',
               ),
             ],
           ),
