@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gits_flutter_ui_component/main_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/empty_state/empty_state_page.dart';
-import 'package:gits_flutter_ui_component/pages/component/shimmer/shimmer.dart';
+import 'package:gits_flutter_ui_component/pages/component/shimmer/shimmer_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/spacing/spacing_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/text/text.dart';
 import 'package:gits_flutter_ui_component/pages/foundation/typography/typhography_page.dart';
@@ -48,7 +48,7 @@ abstract class Routes {
           path: '/shimmer',
           label: 'Shimmer',
           icon: const Icon(Icons.cached),
-          child: const Shimmer(),
+          child: const ShimmerPage(),
         ),
         Navigation(
           path: '/spacing',

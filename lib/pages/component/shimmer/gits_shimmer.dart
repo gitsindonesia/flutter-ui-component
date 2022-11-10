@@ -30,12 +30,14 @@ class GitsItemShimmer extends StatelessWidget {
     required this.height,
     this.margin,
     this.radius,
+    this.boxShape = BoxShape.rectangle,
   }) : super(key: key);
 
   final double? width;
   final double? height;
   final EdgeInsetsGeometry? margin;
   final double? radius;
+  final BoxShape boxShape;
 
   @override
   Widget build(BuildContext context) {
@@ -44,8 +46,11 @@ class GitsItemShimmer extends StatelessWidget {
       height: height,
       margin: margin,
       decoration: BoxDecoration(
+        shape: boxShape,
         color: const Color(0xFFFFFFFF),
-        borderRadius: BorderRadius.circular(radius ?? GitsSizes.s8),
+        borderRadius: boxShape == BoxShape.rectangle
+            ? BorderRadius.circular(radius ?? GitsSizes.s8)
+            : null,
       ),
     );
   }
