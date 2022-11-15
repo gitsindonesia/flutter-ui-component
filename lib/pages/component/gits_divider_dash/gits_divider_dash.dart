@@ -3,28 +3,45 @@ import 'package:flutter/material.dart';
 class GitsDividerDash extends StatelessWidget {
   const GitsDividerDash({
     Key? key,
-    this.width = double.infinity,
+    this.size = double.infinity,
     this.thickness = 2,
     this.color,
     this.dashWidth = 4,
     this.dashGap = 12,
     this.strokeCap = StrokeCap.square,
+    this.axis = Axis.horizontal,
   }) : super(key: key);
 
-  final double width;
+  final double size;
   final double thickness;
   final Color? color;
   final double dashWidth;
   final double dashGap;
   final StrokeCap strokeCap;
+  final Axis axis;
 
   @override
   Widget build(BuildContext context) {
+    if (axis == Axis.vertical) {
+      return SizedBox(
+        width: thickness,
+        height: size,
+        child: CustomPaint(
+          painter: _DrawDashVertical(
+            thickness: thickness,
+            dashGap: dashGap,
+            dashWidth: dashWidth,
+            color: color ?? Colors.grey,
+            strokeCap: strokeCap,
+          ),
+        ),
+      );
+    }
     return SizedBox(
-      width: width,
+      width: size,
       height: thickness,
       child: CustomPaint(
-        painter: DrawDashHorizontal(
+        painter: _DrawDashHorizontal(
           thickness: thickness,
           dashGap: dashGap,
           dashWidth: dashWidth,
@@ -36,8 +53,8 @@ class GitsDividerDash extends StatelessWidget {
   }
 }
 
-class DrawDashHorizontal extends CustomPainter {
-  DrawDashHorizontal({
+class _DrawDashHorizontal extends CustomPainter {
+  _DrawDashHorizontal({
     this.thickness = 2,
     this.color = Colors.grey,
     this.dashWidth = 10,
@@ -47,7 +64,7 @@ class DrawDashHorizontal extends CustomPainter {
     _paint = Paint();
     _paint.color = color; //dots color
     _paint.strokeWidth = thickness; //dots thickness
-    _paint.strokeCap = StrokeCap.square; //dots corner edges
+    _paint.strokeCap = strokeCap; //dots corner edges
   }
 
   late Paint _paint;
@@ -61,6 +78,40 @@ class DrawDashHorizontal extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     for (double i = 0; i < size.width; i = i + dashGap) {
       canvas.drawLine(Offset(i, 0.0), Offset(i + dashWidth, 0.0), _paint);
+    }
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    return false;
+  }
+}
+
+class _DrawDashVertical extends CustomPainter {
+  _DrawDashVertical({
+    this.thickness = 2,
+    this.color = Colors.grey,
+    this.dashWidth = 10,
+    this.dashGap = 15,
+    this.strokeCap = StrokeCap.square,
+  }) {
+    _paint = Paint();
+    _paint.color = color; //dots color
+    _paint.strokeWidth = thickness; //dots thickness
+    _paint.strokeCap = strokeCap; //dots corner edges
+  }
+
+  late Paint _paint;
+  final double thickness;
+  final Color color;
+  final double dashWidth;
+  final double dashGap;
+  final StrokeCap strokeCap;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    for (double i = 0; i < size.height; i = i + dashGap) {
+      canvas.drawLine(Offset(0.0, i), Offset(0.0, i + dashWidth), _paint);
     }
   }
 

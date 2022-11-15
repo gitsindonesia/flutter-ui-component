@@ -4,6 +4,7 @@ import 'package:gits_flutter_ui_component/pages/component/empty_state/empty_stat
 import 'package:gits_flutter_ui_component/pages/component/gits_column_separated/gits_column_separated_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_divider_dash/gits_divider_dash_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_row_separated/gits_row_separated_page.dart';
+import 'package:gits_flutter_ui_component/pages/component/gits_sliver_list_separated/gits_sliver_list_separated_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/shimmer/shimmer_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/spacing/spacing_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/text/text.dart';
@@ -91,6 +92,12 @@ abstract class Routes {
           label: 'Gits Row Separated',
           icon: const Icon(Icons.view_column),
           child: const GitsRowSeparatedPage(),
+        ),
+        Navigation(
+          path: '/gits-sliver-list-separated',
+          label: 'Gits Sliver List Separated',
+          icon: const Icon(Icons.wrap_text),
+          child: const GitsSliverListSeparatedPage(),
         ),
         Navigation(
           path: '/gits-divider-dash',
