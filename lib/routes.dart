@@ -6,6 +6,7 @@ import 'package:gits_flutter_ui_component/pages/component/gits_column_separated/
 import 'package:gits_flutter_ui_component/pages/component/gits_divider_dash/gits_divider_dash_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_row_separated/gits_row_separated_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_sliver_list_separated/gits_sliver_list_separated_page.dart';
+import 'package:gits_flutter_ui_component/pages/component/gits_text_scale_down/gits_text_scale_down_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/shimmer/shimmer_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/spacing/spacing_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/text/text.dart';
@@ -63,6 +64,12 @@ abstract class Routes {
           label: 'Text',
           icon: const Icon(Icons.text_fields),
           child: const TextPage(),
+        ),
+        Navigation(
+          path: '/gits-text-scale-down',
+          label: 'Gits Text Scale Down',
+          icon: const Icon(Icons.text_fields),
+          child: const GitsTextScaleDownPage(),
         ),
         Navigation(
           path: '/shimmer',
