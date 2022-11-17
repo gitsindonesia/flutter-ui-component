@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_text_scale_down/code_snippet.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_text_scale_down/gits_text_scale_down.dart';
