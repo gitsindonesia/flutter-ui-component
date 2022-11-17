@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gits_flutter_ui_component/main_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/empty_state/empty_state_page.dart';
+import 'package:gits_flutter_ui_component/pages/component/gits_button/gits_button_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_circular_loading/gits_circular_loading_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_column_separated/gits_column_separated_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_divider_dash/gits_divider_dash_page.dart';
@@ -70,6 +71,12 @@ abstract class Routes {
           label: 'Gits Text Scale Down',
           icon: const Icon(Icons.text_fields),
           child: const GitsTextScaleDownPage(),
+        ),
+        Navigation(
+          path: '/gits-button',
+          label: 'Gits Button',
+          icon: const Icon(Icons.add),
+          child: const GitsButtonPage(),
         ),
         Navigation(
           path: '/shimmer',
