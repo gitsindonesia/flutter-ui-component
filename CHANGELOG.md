@@ -1,3 +1,11 @@
+## 0.7.0
+
+- add gits circular loading
+- add gits text scale down
+- add component gits button
+- add component gits text field
+- add validator foundation
+
 ## 0.6.0
 
 - add component gits column separated
