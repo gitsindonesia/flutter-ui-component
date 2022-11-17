@@ -7,11 +7,14 @@ import 'package:gits_flutter_ui_component/pages/component/gits_column_separated/
 import 'package:gits_flutter_ui_component/pages/component/gits_divider_dash/gits_divider_dash_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_row_separated/gits_row_separated_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_sliver_list_separated/gits_sliver_list_separated_page.dart';
+import 'package:gits_flutter_ui_component/pages/component/gits_text_field/gits_text_field_page.dart';
+import 'package:gits_flutter_ui_component/pages/component/gits_text_field/src/gits_text_field.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_text_scale_down/gits_text_scale_down_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/shimmer/shimmer_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/spacing/spacing_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/text/text.dart';
 import 'package:gits_flutter_ui_component/pages/foundation/typography/typhography_page.dart';
+import 'package:gits_flutter_ui_component/pages/foundation/validator/validator_value_page.dart';
 import 'package:gits_flutter_ui_component/pages/pages/splash/splash_page.dart';
 import 'package:gits_flutter_ui_component/pages/references/how_to_contribute/how_to_contribute_page.dart';
 import 'package:gits_flutter_ui_component/pages/started/changelog/changelog_page.dart';
@@ -55,6 +58,12 @@ abstract class Routes {
           icon: const Icon(Icons.type_specimen),
           child: const TyphographyPage(),
         ),
+        Navigation(
+          path: '/validation',
+          label: 'Validation',
+          icon: const Icon(Icons.type_specimen),
+          child: const ValidatorValuePage(),
+        ),
       ],
     ),
     CategoryNavigation(
@@ -77,6 +86,12 @@ abstract class Routes {
           label: 'Gits Button',
           icon: const Icon(Icons.add),
           child: const GitsButtonPage(),
+        ),
+        Navigation(
+          path: '/gits-text-field',
+          label: 'Gits Text Field',
+          icon: const Icon(Icons.add),
+          child: const GitsTextFieldPage(),
         ),
         Navigation(
           path: '/shimmer',
