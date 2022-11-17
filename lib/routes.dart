@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gits_flutter_ui_component/main_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/empty_state/empty_state_page.dart';
+import 'package:gits_flutter_ui_component/pages/component/gits_circular_loading/gits_circular_loading_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_column_separated/gits_column_separated_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_divider_dash/gits_divider_dash_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_row_separated/gits_row_separated_page.dart';
@@ -68,6 +69,12 @@ abstract class Routes {
           label: 'Shimmer',
           icon: const Icon(Icons.cached),
           child: const ShimmerPage(),
+        ),
+        Navigation(
+          path: '/gits-circular-loading',
+          label: 'Gits Circular Loading',
+          icon: const Icon(Icons.cached),
+          child: const GitsCircularLoadingPage(),
         ),
         Navigation(
           path: '/spacing',
