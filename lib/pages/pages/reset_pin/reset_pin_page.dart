@@ -20,7 +20,7 @@ class ResetPinPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScaffoldPage(
-      appBar: AppBar(title: const Text('Request Forgot Password page')),
+      appBar: AppBar(title: const Text('Reset Pin Page')),
       children: [
         CardHighlight(
           codeSnippet: codeSnippetSectionFormResetPinPage,
@@ -32,7 +32,7 @@ class ResetPinPage extends StatelessWidget {
         DeviceHighlight(
           codeSnippet: codeSnippetExampleResetPinPage,
           builder: (context) => Scaffold(
-            appBar: AppBar(),
+            appBar: AppBar(title: const Text('Reset Pin')),
             body: const SingleChildScrollView(child: SectionForm()),
             bottomSheet: Container(
               color: Colors.white,
