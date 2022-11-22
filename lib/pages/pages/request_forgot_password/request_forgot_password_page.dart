@@ -41,7 +41,7 @@ class RequestForgotPasswordPage extends StatelessWidget {
               child: GitsButton.elevated(
                 key: const ValueKey('btnKirim'),
                 isLoading: false,
-                text: "context.s.send",
+                text: "Kirim",
                 onPressed: () => {},
               ),
             ),
