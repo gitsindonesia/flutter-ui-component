@@ -53,6 +53,20 @@ class ValidatorValuePage extends StatelessWidget {
                 ),
               ],
             ),
+            DataRow(
+              cells: [
+                const DataCell(Text('Validator Confirm Pin')),
+                DataCell(
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      Text('1. Sudah termasuk validator pin'),
+                      Text('2. Pin tidak sesuai'),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ],

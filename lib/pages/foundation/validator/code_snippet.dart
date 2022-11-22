@@ -40,5 +40,34 @@ String codeSnippetValidatorValue = ''' abstract class ValidatorValueHelper {
     }
     return null;
   }
+
+    static ValidatorValue? validatorConfirmPIN(
+      BuildContext context, String value, String pin) {
+    RegExp regExp = RegExp(r'^[0-9]+\$');
+    if (value.isEmpty) {
+      return const ValidatorValue(
+        message: 'Pin harus diisi',
+        showStatusMessage: ShowStatusMessage.error,
+      );
+    } else if (!regExp.hasMatch(value)) {
+      return const ValidatorValue(
+        message: 'Masukan Pin dengan format angka',
+        showStatusMessage: ShowStatusMessage.error,
+      );
+    } else if (value.length != 6) {
+      return const ValidatorValue(
+        message: 'Pin harus 6 digit',
+        showStatusMessage: ShowStatusMessage.error,
+      );
+    } else {
+      if (value != pin) {
+        return const ValidatorValue(
+          message: 'Pin tidak sesuai',
+          showStatusMessage: ShowStatusMessage.error,
+        );
+      }
+    }
+    return null;
+  }
 }
 ''';
