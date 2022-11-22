@@ -10,7 +10,7 @@ String codeSnippetValidatorValue = ''' abstract class ValidatorValueHelper {
         message: 'Email maksimal 50 karakter',
         showStatusMessage: ShowStatusMessage.error,
       );
-    } else if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}').hasMatch(value)) {
+    } else if (!RegExp(r'^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}').hasMatch(value)) {
       return const ValidatorValue(
         message: 'Email yang Anda masukan tidak sah',
         showStatusMessage: ShowStatusMessage.error,
