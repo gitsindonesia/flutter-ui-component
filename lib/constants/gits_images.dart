@@ -3,4 +3,5 @@ abstract class GitsImages {
   static const String gitsDark = 'assets/images/gits-dark.png';
   static const String githubMark = 'assets/images/github-mark.png';
   static const String github = 'assets/images/github.png';
+  static const String placeholder = 'assets/images/placeholder.png';
 }
