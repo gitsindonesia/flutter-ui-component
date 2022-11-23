@@ -14,6 +14,8 @@ import 'package:gits_flutter_ui_component/pages/component/spacing/spacing_page.d
 import 'package:gits_flutter_ui_component/pages/component/text/text.dart';
 import 'package:gits_flutter_ui_component/pages/foundation/typography/typhography_page.dart';
 import 'package:gits_flutter_ui_component/pages/foundation/validator/validator_value_page.dart';
+import 'package:gits_flutter_ui_component/pages/pages/request_forgot_password/request_forgot_password_page.dart';
+import 'package:gits_flutter_ui_component/pages/pages/reset_pin/reset_pin_page.dart';
 import 'package:gits_flutter_ui_component/pages/pages/splash/splash_page.dart';
 import 'package:gits_flutter_ui_component/pages/references/how_to_contribute/how_to_contribute_page.dart';
 import 'package:gits_flutter_ui_component/pages/started/changelog/changelog_page.dart';
@@ -150,6 +152,18 @@ abstract class Routes {
           label: 'Splash',
           icon: const Icon(Icons.splitscreen),
           child: const SplashPage(),
+        ),
+        Navigation(
+          path: '/request-forgot-password',
+          label: 'Request Forgot Password',
+          icon: const Icon(Icons.splitscreen),
+          child: const RequestForgotPasswordPage(),
+        ),
+        Navigation(
+          path: '/reset-pin',
+          label: 'Reset Pin',
+          icon: const Icon(Icons.splitscreen),
+          child: const ResetPinPage(),
         ),
       ],
     ),

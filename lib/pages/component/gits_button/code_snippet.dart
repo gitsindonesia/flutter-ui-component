@@ -1,13 +1,11 @@
-String codeSnippetIconPositionButton = ''' enum IconPosition { start, end } ''';
-String codeSnippetTypeButton =
-    ''' enum TypeButton { elevated, outlined, text } ''';
 String codeSnippetGitsButton = ''' import 'package:flutter/material.dart';
 import 'package:gits_flutter_ui_component/constants/gits_sizes.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_circular_loading/gits_circular_loading.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_text_scale_down/gits_text_scale_down.dart';
 
-import 'icon_position.dart';
-import 'type_button.dart';
+enum IconPosition { start, end }
+
+enum TypeButton { elevated, outlined, text }
 
 class GitsButton extends StatelessWidget {
   const GitsButton.elevated({
@@ -166,11 +164,11 @@ class GitsButton extends StatelessWidget {
   }
 }
 ''';
-String codeSnippetExampleGitsButton = ''' Scaffold(
+String codeSnippetExampleGitsButton = '''  Scaffold(
       appBar: AppBar(
         title: const Text("Example Gits Button"),
       ),
-      body: Container(
+      body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [

@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:gits_flutter_ui_component/constants/gits_sizes.dart';
 import 'package:gits_flutter_ui_component/extensions/text_theme_extension.dart';
 
-import 'show_status_message.dart';
 import 'text_field_message.dart';
 import 'validator_value.dart';
 
@@ -24,6 +23,8 @@ extension ValidatorExtension on ValidatorValue? {
       this?.showStatusMessage == ShowStatusMessage.none ||
       this?.showStatusMessage == ShowStatusMessage.success;
 }
+
+enum ShowStatusMessage { none, error, info, success, warning }
 
 class GitsTextField extends StatefulWidget {
   const GitsTextField({

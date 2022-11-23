@@ -18,13 +18,6 @@ class GitsTextFieldPage extends StatelessWidget {
       appBar: AppBar(title: const Text('Gits Button')),
       children: [
         CardHighlight(
-          codeSnippet: codeSnippetShowStatusMessageTextField,
-          child: const ShortDescription(
-            title: 'Show Status Message',
-            description: 'Create file show status message',
-          ),
-        ),
-        CardHighlight(
           codeSnippet: codeSnippetTextFieldMessageTextField,
           child: const ShortDescription(
             title: 'Text Field Message',
@@ -46,7 +39,7 @@ class GitsTextFieldPage extends StatelessWidget {
           ),
         ),
         DeviceHighlight(
-          codeSnippet: "codeSnippetExampleGitsButton",
+          codeSnippet: codeSnippetExampleGitsTextField,
           builder: (context) => const ExampleGitsTextField(),
         )
       ],

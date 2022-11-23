@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:gits_flutter_ui_component/pages/component/gits_text_field/gits_text_field.dart';
-
-abstract class ValidatorValueHelper {
+String codeSnippetValidatorValue = ''' abstract class ValidatorValueHelper {
   static ValidatorValue? validatorEmail(BuildContext context, String value) {
     if (value.isEmpty) {
       return const ValidatorValue(
@@ -13,7 +10,7 @@ abstract class ValidatorValueHelper {
         message: 'Email maksimal 50 karakter',
         showStatusMessage: ShowStatusMessage.error,
       );
-    } else if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}').hasMatch(value)) {
+    } else if (!RegExp(r'^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}').hasMatch(value)) {
       return const ValidatorValue(
         message: 'Email yang Anda masukan tidak sah',
         showStatusMessage: ShowStatusMessage.error,
@@ -23,7 +20,7 @@ abstract class ValidatorValueHelper {
   }
 
   static ValidatorValue? validatorPIN(BuildContext context, String value) {
-    RegExp regExp = RegExp(r'^[0-9]+$');
+    RegExp regExp = RegExp(r'^[0-9]+\$');
 
     if (value.isEmpty) {
       return const ValidatorValue(
@@ -44,9 +41,9 @@ abstract class ValidatorValueHelper {
     return null;
   }
 
-  static ValidatorValue? validatorConfirmPIN(
+    static ValidatorValue? validatorConfirmPIN(
       BuildContext context, String value, String pin) {
-    RegExp regExp = RegExp(r'^[0-9]+$');
+    RegExp regExp = RegExp(r'^[0-9]+\$');
     if (value.isEmpty) {
       return const ValidatorValue(
         message: 'Pin harus diisi',
@@ -73,3 +70,4 @@ abstract class ValidatorValueHelper {
     return null;
   }
 }
+''';

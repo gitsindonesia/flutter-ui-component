@@ -1,3 +1,13 @@
+## 0.8.0
+
+- add page reset pin
+- add page forgot password
+- add validator confirm pin
+- fix component gits text field
+- fix component gits text scale down
+- fix component gits button
+- remove lib flutter native splash
+
 ## 0.7.0
 
 - add gits circular loading

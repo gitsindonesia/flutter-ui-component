@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'show_status_message.dart';
+import 'package:gits_flutter_ui_component/pages/component/gits_text_field/gits_text_field.dart';
 
 class ValidatorValue extends Equatable {
   const ValidatorValue({

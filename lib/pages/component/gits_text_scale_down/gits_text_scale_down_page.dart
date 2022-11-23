@@ -90,7 +90,7 @@ class _ExampleGitsTextScaleDownState extends State<ExampleGitsTextScaleDown> {
               ),
               const GitsSpacing.vertical16(),
               GitsSlider(
-                title: 'Circular size',
+                title: 'maxLines',
                 value: maxLines,
                 max: 5,
                 onChanged: (value) => setState(() {

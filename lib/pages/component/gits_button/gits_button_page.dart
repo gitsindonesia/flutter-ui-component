@@ -16,20 +16,6 @@ class GitsButtonPage extends StatelessWidget {
       appBar: AppBar(title: const Text('Gits Button')),
       children: [
         CardHighlight(
-          codeSnippet: codeSnippetIconPositionButton,
-          child: const ShortDescription(
-            title: 'Icon Position',
-            description: 'Create file icon position',
-          ),
-        ),
-        CardHighlight(
-          codeSnippet: codeSnippetTypeButton,
-          child: const ShortDescription(
-            title: 'Type Button',
-            description: 'Create file type button',
-          ),
-        ),
-        CardHighlight(
           codeSnippet: codeSnippetGitsButton,
           child: const ShortDescription(
             title: 'Gits Button',
@@ -59,7 +45,7 @@ class _ExampleGitsButtonPageState extends State<ExampleGitsButtonPage> {
       appBar: AppBar(
         title: const Text("Example Gits Button"),
       ),
-      body: Container(
+      body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [

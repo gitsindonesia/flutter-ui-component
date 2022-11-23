@@ -1,5 +1,3 @@
-String codeSnippetShowStatusMessageTextField =
-    ''' enum ShowStatusMessage { none, error, info, success, warning } ''';
 String codeSnippetTextFieldMessageTextField =
     ''' import 'package:flutter/material.dart';
 import 'package:gits_flutter_ui_component/constants/gits_sizes.dart';
@@ -104,6 +102,8 @@ extension ValidatorExtension on ValidatorValue? {
       this?.showStatusMessage == ShowStatusMessage.none ||
       this?.showStatusMessage == ShowStatusMessage.success;
 }
+
+enum ShowStatusMessage { none, error, info, success, warning }
 
 class GitsTextField extends StatefulWidget {
   const GitsTextField({
@@ -347,3 +347,38 @@ class GitsTextFieldState extends State<GitsTextField> {
   }
 }
 ''';
+
+String codeSnippetExampleGitsTextField = ''' Scaffold(
+      appBar: AppBar(title: const Text("Example Gits Text Field")),
+      body: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            children: [
+              const GitsTextField(
+                title: 'Email',
+                isAutoValidate: true,
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(hintText: 'Masukan Email'),
+                validator: ValidatorValueHelper.validatorEmail,
+                textInputAction: TextInputAction.next,
+              ),
+              const GitsSpacing.vertical16(),
+              GitsTextField(
+                isPassword: true,
+                isAutoValidate: true,
+                title: 'Pin',
+                keyboardType: TextInputType.number,
+                inputFormatters: [
+                  FilteringTextInputFormatter.digitsOnly,
+                  LengthLimitingTextInputFormatter(6),
+                ],
+                decoration:
+                    const InputDecoration(hintText: 'Masukan 6 Digit Pin Anda'),
+                validator: ValidatorValueHelper.validatorPIN,
+              ),
+            ],
+          ),
+        ),
+      ),
+    ); ''';
