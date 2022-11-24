@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gits_flutter_ui_component/pages/component/gits_bottom_sheet/code_snippet.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_bottom_sheet/gits_bottom_sheet_extension.dart';
-import 'package:gits_flutter_ui_component/pages/component/gits_bottom_sheet/gits_bottom_sheet_form_calendar.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_button/gits_button.dart';
 import 'package:gits_flutter_ui_component/widgets/card_highlight.dart';
 import 'package:gits_flutter_ui_component/widgets/device_highlight.dart';
@@ -14,17 +14,52 @@ class GitBottomSheetPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScaffoldPage(
-      appBar: AppBar(title: const Text('Gits Contact')),
+      appBar: AppBar(title: const Text('Gits Bottom Sheet')),
       children: [
         CardHighlight(
-          codeSnippet: "codeSnippetGitsContact",
+          codeSnippet: codeSnippetGitsBottomSheetAppBar,
           child: const ShortDescription(
-            title: 'Gits Contact',
-            description: 'Create component gits contact',
+            title: 'Gits Bottom Sheet Appbar',
+            description: 'Create component',
+          ),
+        ),
+        CardHighlight(
+          codeSnippet: codeSnippetGitsBottomSheetCalendar,
+          child: const ShortDescription(
+            title: 'Gits Bottom Sheet Calendar',
+            description: 'Create component',
+          ),
+        ),
+        CardHighlight(
+          codeSnippet: codeSnippetGitsBottomSheetFormCalendar,
+          child: const ShortDescription(
+            title: 'Gits Bottom Sheet Form Calendar',
+            description: 'Create component',
+          ),
+        ),
+        CardHighlight(
+          codeSnippet: codeSnippetGitsBottomSheetSuccess,
+          child: const ShortDescription(
+            title: 'Gits Bottom Sheet Success',
+            description: 'Create component',
+          ),
+        ),
+        CardHighlight(
+          codeSnippet: codeSnippetGitsBottomSheet,
+          child: const ShortDescription(
+            title: 'Gits Bottom Sheet',
+            description: 'Create component',
+          ),
+        ),
+        CardHighlight(
+          codeSnippet: codeSnippetGitsBottomSheetExtension,
+          child: const ShortDescription(
+            title: 'Gits Bottom Sheet Extension',
+            description: 'Create extension',
           ),
         ),
         DeviceHighlight(
-          codeSnippet: "codeSnippetExampleGitsContactPage",
+          codeSnippet: codeSnippetExampleGitsBottomSheetPage,
           builder: (context) => const ExampleGitBottomSheetPage(),
         )
       ],
@@ -46,7 +81,7 @@ class _ExampleGitBottomSheetPageState extends State<ExampleGitBottomSheetPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: const Text('Example Gits Bottom Sheet')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
