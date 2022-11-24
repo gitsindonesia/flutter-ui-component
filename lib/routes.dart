@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gits_flutter_ui_component/main_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/empty_state/empty_state_page.dart';
+import 'package:gits_flutter_ui_component/pages/component/gits_bottom_sheet/gits_bottom_sheet_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_button/gits_button_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_cached_image/gits_cached_image_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_calendar/gits_calendar_page.dart';
@@ -126,6 +127,12 @@ abstract class Routes {
           label: 'Gits Calendar',
           icon: const Icon(Icons.cached),
           child: const GitsCalendarPage(),
+        ),
+        Navigation(
+          path: '/gits-bottom-sheet',
+          label: 'Gits Bottom Sheet',
+          icon: const Icon(Icons.cached),
+          child: const GitBottomSheetPage(),
         ),
         Navigation(
           path: '/spacing',
