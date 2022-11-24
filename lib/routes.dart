@@ -5,6 +5,7 @@ import 'package:gits_flutter_ui_component/pages/component/gits_button/gits_butto
 import 'package:gits_flutter_ui_component/pages/component/gits_cached_image/gits_cached_image_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_circular_loading/gits_circular_loading_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_column_separated/gits_column_separated_page.dart';
+import 'package:gits_flutter_ui_component/pages/component/gits_contact/gits_contact_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_divider_dash/gits_divider_dash_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_row_separated/gits_row_separated_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_sliver_list_separated/gits_sliver_list_separated_page.dart';
@@ -112,6 +113,12 @@ abstract class Routes {
           label: 'Gits Cached Image',
           icon: const Icon(Icons.cached),
           child: const GitsCachedImagePage(),
+        ),
+        Navigation(
+          path: '/gits-contact',
+          label: 'Gits Contact',
+          icon: const Icon(Icons.cached),
+          child: const GitsContactPage(),
         ),
         Navigation(
           path: '/spacing',
