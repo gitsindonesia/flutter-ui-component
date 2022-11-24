@@ -41,11 +41,11 @@ class ExampleGitsCalendarPage extends StatefulWidget {
 }
 
 class _ExampleGitsCalendarPageState extends State<ExampleGitsCalendarPage> {
+  final DateTime now = DateTime.now();
+  DateTime selectedDay = DateTime.now();
+
   @override
   Widget build(BuildContext context) {
-    final DateTime now = DateTime.now();
-    DateTime selectedDay = DateTime.now();
-
     return Scaffold(
       appBar: AppBar(title: const Text('Example Gits Calendar')),
       body: Column(
