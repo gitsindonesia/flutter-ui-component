@@ -8,6 +8,7 @@ import 'package:gits_flutter_ui_component/pages/component/gits_calendar/gits_cal
 import 'package:gits_flutter_ui_component/pages/component/gits_circular_loading/gits_circular_loading_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_column_separated/gits_column_separated_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_contact/gits_contact_page.dart';
+import 'package:gits_flutter_ui_component/pages/component/gits_container_shadow/gits_container_shadow_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_divider_dash/gits_divider_dash_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_row_separated/gits_row_separated_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_sliver_list_separated/gits_sliver_list_separated_page.dart';
@@ -127,6 +128,12 @@ abstract class Routes {
           label: 'Gits Calendar',
           icon: const Icon(Icons.cached),
           child: const GitsCalendarPage(),
+        ),
+        Navigation(
+          path: '/gits-container-shadow',
+          label: 'Gits Container Shadow',
+          icon: const Icon(Icons.cached),
+          child: const GitsContainerShadowPage(),
         ),
         Navigation(
           path: '/gits-bottom-sheet',
