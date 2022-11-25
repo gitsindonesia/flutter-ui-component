@@ -18,6 +18,8 @@ import 'package:gits_flutter_ui_component/pages/component/gits_text_scale_down/g
 import 'package:gits_flutter_ui_component/pages/component/shimmer/shimmer_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/spacing/spacing_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/text/text.dart';
+import 'package:gits_flutter_ui_component/pages/extension/currency/currency_extension_page.dart';
+import 'package:gits_flutter_ui_component/pages/extension/date_time/date_time_extension_page.dart';
 import 'package:gits_flutter_ui_component/pages/foundation/typography/typhography_page.dart';
 import 'package:gits_flutter_ui_component/pages/foundation/validator/validator_value_page.dart';
 import 'package:gits_flutter_ui_component/pages/pages/request_forgot_password/request_forgot_password_page.dart';
@@ -206,6 +208,17 @@ abstract class Routes {
           label: 'Reset Pin',
           icon: const Icon(Icons.splitscreen),
           child: const ResetPinPage(),
+        ),
+      ],
+    ),
+    CategoryNavigation(
+      category: 'Extension',
+      navigations: [
+        Navigation(
+          path: '/date-time',
+          label: 'Date Time',
+          icon: const Icon(Icons.volunteer_activism),
+          child: const DateTimeExtensionPage(),
         ),
       ],
     ),
