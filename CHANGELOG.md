@@ -1,3 +1,10 @@
+## 1.0.0
+
+- add component gits container shadow
+- add component gits search
+- refactor date time extension
+- add extension currency
+
 ## 0.9.0
 
 - add component gits bottom sheet
