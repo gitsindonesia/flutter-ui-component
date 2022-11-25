@@ -220,6 +220,12 @@ abstract class Routes {
           icon: const Icon(Icons.volunteer_activism),
           child: const DateTimeExtensionPage(),
         ),
+        Navigation(
+          path: '/currency',
+          label: 'Currency',
+          icon: const Icon(Icons.volunteer_activism),
+          child: const CurrencyExtensionPage(),
+        ),
       ],
     ),
     CategoryNavigation(
