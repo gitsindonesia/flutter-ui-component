@@ -1,0 +1,18 @@
+on:
+  pull_request:
+    types: [opened, reopened]
+name: Slack Notification Pull Requests
+jobs:
+  slackNotification:
+    name: Slack Notification
+    runs-on: ubuntu-latest
+    steps:
+    - name: Slack Notification
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_CHANNEL: '#flutter-deployment'
+        SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
+        SLACK_MESSAGE: 'Need action pull request <@U03219R5FAB>'
+        SLACK_TITLE: 'Pull Request'
+        SLACK_USERNAME: Gits
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
