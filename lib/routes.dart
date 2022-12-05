@@ -13,6 +13,7 @@ import 'package:gits_flutter_ui_component/pages/component/gits_divider_dash/gits
 import 'package:gits_flutter_ui_component/pages/component/gits_row_separated/gits_row_separated_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_search/gits_search_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_sliver_list_separated/gits_sliver_list_separated_page.dart';
+import 'package:gits_flutter_ui_component/pages/component/gits_status_rounded/gits_status_rounded_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_text_field/gits_text_field_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_text_scale_down/gits_text_scale_down_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/shimmer/shimmer_page.dart';
@@ -185,6 +186,12 @@ abstract class Routes {
           label: 'Gits Divider Dash',
           icon: const Icon(Icons.power_input),
           child: const GitsDividerDashPage(),
+        ),
+        Navigation(
+          path: '/gits-status-rounded',
+          label: 'Gits Status Rounded',
+          icon: const Icon(Icons.power_input),
+          child: const GitsStatusRoundedPage(),
         ),
       ],
     ),
