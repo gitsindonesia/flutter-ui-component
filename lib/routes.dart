@@ -13,6 +13,7 @@ import 'package:gits_flutter_ui_component/pages/component/gits_divider_dash/gits
 import 'package:gits_flutter_ui_component/pages/component/gits_row_separated/gits_row_separated_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_search/gits_search_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_sliver_list_separated/gits_sliver_list_separated_page.dart';
+import 'package:gits_flutter_ui_component/pages/component/gits_status_message/gits_status_message_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_status_rounded/gits_status_rounded_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_text_field/gits_text_field_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_text_scale_down/gits_text_scale_down_page.dart';
@@ -192,6 +193,12 @@ abstract class Routes {
           label: 'Gits Status Rounded',
           icon: const Icon(Icons.power_input),
           child: const GitsStatusRoundedPage(),
+        ),
+        Navigation(
+          path: '/gits-status-message',
+          label: 'Gits Status Message',
+          icon: const Icon(Icons.power_input),
+          child: const GitsStatusMessagePage(),
         ),
       ],
     ),
