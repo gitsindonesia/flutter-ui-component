@@ -8,14 +8,18 @@ import 'package:gits_flutter_ui_component/pages/component/gits_calendar/gits_cal
 import 'package:gits_flutter_ui_component/pages/component/gits_circular_loading/gits_circular_loading_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_column_separated/gits_column_separated_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_contact/gits_contact_page.dart';
+import 'package:gits_flutter_ui_component/pages/component/gits_container_shadow/gits_container_shadow_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_divider_dash/gits_divider_dash_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_row_separated/gits_row_separated_page.dart';
+import 'package:gits_flutter_ui_component/pages/component/gits_search/gits_search_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_sliver_list_separated/gits_sliver_list_separated_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_text_field/gits_text_field_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_text_scale_down/gits_text_scale_down_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/shimmer/shimmer_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/spacing/spacing_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/text/text.dart';
+import 'package:gits_flutter_ui_component/pages/extension/currency/currency_extension_page.dart';
+import 'package:gits_flutter_ui_component/pages/extension/date_time/date_time_extension_page.dart';
 import 'package:gits_flutter_ui_component/pages/foundation/typography/typhography_page.dart';
 import 'package:gits_flutter_ui_component/pages/foundation/validator/validator_value_page.dart';
 import 'package:gits_flutter_ui_component/pages/pages/request_forgot_password/request_forgot_password_page.dart';
@@ -129,6 +133,18 @@ abstract class Routes {
           child: const GitsCalendarPage(),
         ),
         Navigation(
+          path: '/gits-container-shadow',
+          label: 'Gits Container Shadow',
+          icon: const Icon(Icons.cached),
+          child: const GitsContainerShadowPage(),
+        ),
+        Navigation(
+          path: '/gits-search',
+          label: 'Gits Search',
+          icon: const Icon(Icons.cached),
+          child: const GitsSearchPage(),
+        ),
+        Navigation(
           path: '/gits-bottom-sheet',
           label: 'Gits Bottom Sheet',
           icon: const Icon(Icons.cached),
@@ -192,6 +208,23 @@ abstract class Routes {
           label: 'Reset Pin',
           icon: const Icon(Icons.splitscreen),
           child: const ResetPinPage(),
+        ),
+      ],
+    ),
+    CategoryNavigation(
+      category: 'Extension',
+      navigations: [
+        Navigation(
+          path: '/date-time',
+          label: 'Date Time',
+          icon: const Icon(Icons.volunteer_activism),
+          child: const DateTimeExtensionPage(),
+        ),
+        Navigation(
+          path: '/currency',
+          label: 'Currency',
+          icon: const Icon(Icons.volunteer_activism),
+          child: const CurrencyExtensionPage(),
         ),
       ],
     ),
