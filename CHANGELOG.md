@@ -1,4 +1,4 @@
-## 1.0.0
+## 0.10.0
 
 - add component gits container shadow
 - add component gits search
