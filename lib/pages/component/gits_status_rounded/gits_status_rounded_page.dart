@@ -13,7 +13,7 @@ class GitsStatusRoundedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScaffoldPage(
-      appBar: AppBar(title: const Text('Gits Search')),
+      appBar: AppBar(title: const Text('Gits Status Rounded')),
       children: [
         CardHighlight(
           codeSnippet: codeSnippetGitsStatusRounded,
