@@ -1,3 +1,8 @@
+## 0.11.0
+
+- add component gits status message
+- add component gits status rounded
+
 ## 0.10.0
 
 - add component gits container shadow
