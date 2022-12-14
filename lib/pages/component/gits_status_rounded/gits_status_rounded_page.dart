@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_status_rounded/code_snippet.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_status_rounded/gits_status_rounded.dart';
+import 'package:gits_flutter_ui_component/pages/component/gits_text_field/gits_text_field.dart';
 import 'package:gits_flutter_ui_component/widgets/card_highlight.dart';
+import 'package:gits_flutter_ui_component/widgets/card_properties.dart';
 import 'package:gits_flutter_ui_component/widgets/device_highlight.dart';
 import 'package:gits_flutter_ui_component/widgets/gits_spacing.dart';
 import 'package:gits_flutter_ui_component/widgets/scaffold_page.dart';
@@ -41,6 +43,24 @@ class ExampleGitsStatusRoundedPage extends StatefulWidget {
 
 class _ExampleGitsStatusRoundedPageState
     extends State<ExampleGitsStatusRoundedPage> {
+  String selectedTextColor = 'grey';
+  Map<String, Color> textColors = {
+    'grey': Colors.grey,
+    'red': Colors.red,
+    'green': Colors.green,
+    'blue': Colors.blue,
+    'black': Colors.black,
+  };
+
+  String selectedBackgroundColor = 'grey';
+  Map<String, Color> bgColors = {
+    'grey': Colors.grey.shade300,
+    'red': Colors.red.shade300,
+    'green': Colors.green.shade300,
+    'blue': Colors.blue.shade300,
+    'black': Colors.black38,
+  };
+  String text = "status";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,18 +68,40 @@ class _ExampleGitsStatusRoundedPageState
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          children: const [
-            GitsStatusRounded(text: "Selesai"),
-            GitsSpacing.vertical16(),
+          children: [
             GitsStatusRounded(
-              text: "Proses",
-              backgroundColor: Colors.orangeAccent,
+                text: text,
+                backgroundColor: bgColors[selectedBackgroundColor],
+                textColor: textColors[selectedTextColor]),
+            const GitsSpacing.vertical16(),
+            GitsTextField(
+              title: 'Status Text',
+              onChanged: (value) => setState(() {
+                text = value;
+              }),
+              decoration: const InputDecoration(
+                counterText: "",
+                hintText: 'Masukan text yang diinginkan',
+              ),
             ),
-            GitsSpacing.vertical16(),
-            GitsStatusRounded(
-                text: "Error",
-                backgroundColor: Colors.redAccent,
-                textColor: Colors.white),
+            const GitsSpacing.vertical16(),
+            CardProperties(
+              title: 'Background Color',
+              selected: selectedBackgroundColor,
+              items: bgColors.keys.toList(),
+              onChanged: (value) => setState(() {
+                selectedBackgroundColor = value;
+              }),
+            ),
+            const GitsSpacing.vertical16(),
+            CardProperties(
+              title: 'Text Color',
+              selected: selectedTextColor,
+              items: textColors.keys.toList(),
+              onChanged: (value) => setState(() {
+                selectedTextColor = value;
+              }),
+            ),
           ],
         ),
       ),
