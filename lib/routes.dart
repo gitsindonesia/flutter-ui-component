@@ -9,6 +9,7 @@ import 'package:gits_flutter_ui_component/pages/component/gits_circular_loading/
 import 'package:gits_flutter_ui_component/pages/component/gits_column_separated/gits_column_separated_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_contact/gits_contact_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_container_shadow/gits_container_shadow_page.dart';
+import 'package:gits_flutter_ui_component/pages/component/gits_date_time_picker/gits_date_time_picker_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_divider_dash/gits_divider_dash_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_row_separated/gits_row_separated_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_search/gits_search_page.dart';
@@ -200,6 +201,12 @@ abstract class Routes {
           label: 'Gits Status Message',
           icon: const Icon(Icons.power_input),
           child: const GitsStatusMessagePage(),
+        ),
+        Navigation(
+          path: '/gits-date-time-picker',
+          label: 'Gits Date Time Picker',
+          icon: const Icon(Icons.power_input),
+          child: const GitsDateTimePickerPage(),
         ),
       ],
     ),
