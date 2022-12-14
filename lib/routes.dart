@@ -22,6 +22,7 @@ import 'package:gits_flutter_ui_component/pages/component/spacing/spacing_page.d
 import 'package:gits_flutter_ui_component/pages/component/text/text.dart';
 import 'package:gits_flutter_ui_component/pages/extension/currency/currency_extension_page.dart';
 import 'package:gits_flutter_ui_component/pages/extension/date_time/date_time_extension_page.dart';
+import 'package:gits_flutter_ui_component/pages/extension/encrypt/encrypt_extension_page.dart';
 import 'package:gits_flutter_ui_component/pages/foundation/typography/typhography_page.dart';
 import 'package:gits_flutter_ui_component/pages/foundation/validator/validator_value_page.dart';
 import 'package:gits_flutter_ui_component/pages/pages/request_forgot_password/request_forgot_password_page.dart';
@@ -239,6 +240,12 @@ abstract class Routes {
           label: 'Currency',
           icon: const Icon(Icons.volunteer_activism),
           child: const CurrencyExtensionPage(),
+        ),
+        Navigation(
+          path: '/encrypt',
+          label: 'Encrypt',
+          icon: const Icon(Icons.volunteer_activism),
+          child: const EncryptExtensionPage(),
         ),
       ],
     ),
