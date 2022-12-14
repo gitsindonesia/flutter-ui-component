@@ -1,3 +1,10 @@
+## 0.12.0
+
+- add component gits date time picker
+- add encrypt extension
+- add component gits status message
+- fix example gits status rounded
+
 ## 0.11.0
 
 - add component gits status message
