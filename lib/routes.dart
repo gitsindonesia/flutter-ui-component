@@ -9,6 +9,7 @@ import 'package:gits_flutter_ui_component/pages/component/gits_circular_loading/
 import 'package:gits_flutter_ui_component/pages/component/gits_column_separated/gits_column_separated_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_contact/gits_contact_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_container_shadow/gits_container_shadow_page.dart';
+import 'package:gits_flutter_ui_component/pages/component/gits_date_time_picker/gits_date_time_picker_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_divider_dash/gits_divider_dash_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_row_separated/gits_row_separated_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_search/gits_search_page.dart';
@@ -22,6 +23,7 @@ import 'package:gits_flutter_ui_component/pages/component/spacing/spacing_page.d
 import 'package:gits_flutter_ui_component/pages/component/text/text.dart';
 import 'package:gits_flutter_ui_component/pages/extension/currency/currency_extension_page.dart';
 import 'package:gits_flutter_ui_component/pages/extension/date_time/date_time_extension_page.dart';
+import 'package:gits_flutter_ui_component/pages/extension/encrypt/encrypt_extension_page.dart';
 import 'package:gits_flutter_ui_component/pages/foundation/typography/typhography_page.dart';
 import 'package:gits_flutter_ui_component/pages/foundation/validator/validator_value_page.dart';
 import 'package:gits_flutter_ui_component/pages/pages/request_forgot_password/request_forgot_password_page.dart';
@@ -200,6 +202,12 @@ abstract class Routes {
           icon: const Icon(Icons.power_input),
           child: const GitsStatusMessagePage(),
         ),
+        Navigation(
+          path: '/gits-date-time-picker',
+          label: 'Gits Date Time Picker',
+          icon: const Icon(Icons.power_input),
+          child: const GitsDateTimePickerPage(),
+        ),
       ],
     ),
     CategoryNavigation(
@@ -239,6 +247,12 @@ abstract class Routes {
           label: 'Currency',
           icon: const Icon(Icons.volunteer_activism),
           child: const CurrencyExtensionPage(),
+        ),
+        Navigation(
+          path: '/encrypt',
+          label: 'Encrypt',
+          icon: const Icon(Icons.volunteer_activism),
+          child: const EncryptExtensionPage(),
         ),
       ],
     ),
