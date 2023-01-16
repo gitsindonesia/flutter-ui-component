@@ -1,3 +1,7 @@
+## 0.13.0
+
+- add component gits star rating
+
 ## 0.12.0
 
 - add component gits date time picker
