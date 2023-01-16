@@ -86,36 +86,51 @@ class _GitsStarRatingState extends State<GitsStarRating> {
 }
 ''';
 
-String codeSnippetExampleGitsStarRating = ''' Scaffold(
+String codeSnippetExampleGitsStarRating = '''class ExampleGitsStarRating extends StatefulWidget {
+  const ExampleGitsStarRating({super.key});
+
+  @override
+  State<ExampleGitsStarRating> createState() => _ExampleGitsStarRatingState();
+}
+
+class _ExampleGitsStarRatingState extends State<ExampleGitsStarRating> {
+
+  int rating = 3;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
         appBar: AppBar(title: const Text('Example Gits Star Rating')),
         body: Padding(
           padding: const EdgeInsets.all(16),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "Penilaian",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                ),
+              const Text(
+                "Penilaian",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
               const GitsSpacing.vertical16(),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: const [
+                children:  [
                   GitsStarRating(
-                    isTap: false,
-                    scale: 1.1,
-                    starRating: 3,
-                    padding: EdgeInsets.symmetric(horizontal: 8),
+                    isTap: true,
+                    scale: 4.5,
+                    starRating: rating,
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
                     mainAxisAlignment: MainAxisAlignment.center,
-                    result: null,
+                    result: (value) {
+                      setState(() {
+                        rating = value;
+                      });
+                    },
                   ),
-                  GitsSpacing.vertical16(),
+                  const GitsSpacing.vertical16(),
                   Text(
-                    "Biasa Saja",
-                    style: TextStyle(
+                    "Rating : rating",
+                    style: const TextStyle(
                       fontSize: 16,
                     ),
                   ),
@@ -123,4 +138,6 @@ String codeSnippetExampleGitsStarRating = ''' Scaffold(
               )
             ],
           ),
-        ));''';
+        ));
+  }
+}''';
