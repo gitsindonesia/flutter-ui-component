@@ -1,3 +1,8 @@
+## 0.13.1
+
+- update dependency
+- fix issue button grey in release mode
+
 ## 0.13.0
 
 - add component gits star rating

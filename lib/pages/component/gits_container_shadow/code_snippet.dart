@@ -51,10 +51,13 @@ String codeSnippetExampleGitsContainerShadowPage = ''' Scaffold(
               children: [
                 const Text('Headline'),
                 const GitsSpacing.horizontal16(),
-                const GitsTextScaleDown(
-                    maxLines: 3,
-                    fit: FlexFit.tight,
-                    'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s'),
+                const Expanded(
+                  child: Text(
+                    'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
                 const GitsSpacing.horizontal16(),
                 IconButton(
                   onPressed: () => {},

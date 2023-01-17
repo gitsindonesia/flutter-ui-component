@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_text_scale_down/code_snippet.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_text_scale_down/gits_text_scale_down.dart';
 import 'package:gits_flutter_ui_component/widgets/card_highlight.dart';
-import 'package:gits_flutter_ui_component/widgets/card_properties.dart';
 import 'package:gits_flutter_ui_component/widgets/device_highlight.dart';
-import 'package:gits_flutter_ui_component/widgets/gits_slider.dart';
-import 'package:gits_flutter_ui_component/widgets/gits_spacing.dart';
 import 'package:gits_flutter_ui_component/widgets/scaffold_page.dart';
 import 'package:gits_flutter_ui_component/widgets/short_description.dart';
 
@@ -42,13 +39,6 @@ class ExampleGitsTextScaleDown extends StatefulWidget {
 }
 
 class _ExampleGitsTextScaleDownState extends State<ExampleGitsTextScaleDown> {
-  String selectedFit = 'loose';
-  double maxLines = 1;
-
-  Map<String, FlexFit> fit = {
-    'tight': FlexFit.tight,
-    'loose': FlexFit.loose,
-  };
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,45 +47,10 @@ class _ExampleGitsTextScaleDownState extends State<ExampleGitsTextScaleDown> {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
-            children: [
-              Row(
-                children: [
-                  GitsTextScaleDown(
-                    "First Name",
-                    fit: fit[selectedFit]!,
-                  ),
-                  GitsTextScaleDown(
-                    "Last Name",
-                    fit: fit[selectedFit]!,
-                  ),
-                ],
-              ),
-              const GitsSpacing.vertical16(),
-              CardProperties(
-                title: 'Fit',
-                selected: selectedFit,
-                items: fit.keys.toList(),
-                onChanged: (value) => setState(() {
-                  selectedFit = value;
-                }),
-              ),
-              const GitsSpacing.vertical16(),
-              Row(
-                children: [
-                  GitsTextScaleDown(
-                    maxLines: maxLines.toInt(),
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-                  ),
-                ],
-              ),
-              const GitsSpacing.vertical16(),
-              GitsSlider(
-                title: 'maxLines',
-                value: maxLines,
-                max: 5,
-                onChanged: (value) => setState(() {
-                  maxLines = value.toInt() == 0 ? 1 : value;
-                }),
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              GitsTextScaleDown(
+                "Lorem Ipsum is simply dummy text",
               ),
             ],
           ),

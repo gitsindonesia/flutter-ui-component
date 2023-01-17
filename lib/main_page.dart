@@ -136,7 +136,7 @@ class SideMenu extends StatelessWidget {
             );
           }),
           const GitsSpacing.vertical16(),
-          const Text('GITS Indonesia, 2022'),
+          const Text('GITS Indonesia, 2023'),
         ],
       ),
       items: items,

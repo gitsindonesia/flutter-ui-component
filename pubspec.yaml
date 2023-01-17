@@ -15,10 +15,10 @@ dependencies:
     sdk: flutter
 
   # components
-  table_calendar: ^3.0.7
-  cached_network_image: ^3.2.2
+  table_calendar: ^3.0.9
+  cached_network_image: ^3.2.3
   shimmer: ^2.0.0
-  flutter_svg: ^1.1.5
+  flutter_svg: ^1.1.6
   device_frame: ^1.1.0
   flutter_markdown: ^0.6.13
   flutter_syntax_view:
@@ -26,13 +26,13 @@ dependencies:
       url: https://github.com/YehudaKremer/flutter_syntax_view.git
 
   # navigation
-  go_router: ^5.1.5
+  go_router: ^6.0.1
 
   # state management
   flutter_bloc: ^8.1.1
 
   # utils
-  intl: ^0.17.0
+  intl: ^0.18.0
   collection: ^1.16.0
   url_launcher: ^6.1.6
   equatable: ^2.0.5
