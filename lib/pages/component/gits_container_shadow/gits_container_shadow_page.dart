@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_container_shadow/code_snippet.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_container_shadow/gits_container_shadow.dart';
-import 'package:gits_flutter_ui_component/pages/component/gits_text_scale_down/gits_text_scale_down.dart';
 import 'package:gits_flutter_ui_component/widgets/card_highlight.dart';
 import 'package:gits_flutter_ui_component/widgets/device_highlight.dart';
 import 'package:gits_flutter_ui_component/widgets/gits_spacing.dart';
@@ -58,10 +57,13 @@ class _ExampleGitsContainerShadowPageState
               children: [
                 const Text('Headline'),
                 const GitsSpacing.horizontal16(),
-                const GitsTextScaleDown(
-                    maxLines: 3,
-                    fit: FlexFit.tight,
-                    'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s'),
+                const Expanded(
+                  child: Text(
+                    'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
                 const GitsSpacing.horizontal16(),
                 IconButton(
                   onPressed: () => {},
