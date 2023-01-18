@@ -1,3 +1,7 @@
+## 0.14.0
+
+- add component gits image picker
+
 ## 0.13.1
 
 - update dependency

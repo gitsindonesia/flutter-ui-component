@@ -11,6 +11,7 @@ import 'package:gits_flutter_ui_component/pages/component/gits_contact/gits_cont
 import 'package:gits_flutter_ui_component/pages/component/gits_container_shadow/gits_container_shadow_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_date_time_picker/gits_date_time_picker_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_divider_dash/gits_divider_dash_page.dart';
+import 'package:gits_flutter_ui_component/pages/component/gits_image_picker/gits_image_picker_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_row_separated/gits_row_separated_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_search/gits_search_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_sliver_list_separated/gits_sliver_list_separated_page.dart';
@@ -214,6 +215,12 @@ abstract class Routes {
           label: 'Gits Date Time Picker',
           icon: const Icon(Icons.power_input),
           child: const GitsDateTimePickerPage(),
+        ),
+        Navigation(
+          path: '/gits-image-picker',
+          label: 'Gits Image Picker',
+          icon: const Icon(Icons.photo_camera),
+          child: const GitsImagePickerPage(),
         ),
       ],
     ),
