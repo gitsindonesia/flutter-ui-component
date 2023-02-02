@@ -12,7 +12,7 @@ class GitsPlayerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScaffoldPage(
-      appBar: AppBar(title: const Text('Gits Search')),
+      appBar: AppBar(title: const Text('Gits Player')),
       children: [
         CardHighlight(
           codeSnippet: codeSnippetGitsPlayer,
@@ -41,7 +41,7 @@ class _ExampleGitsPlayerState extends State<ExampleGitsPlayer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Example Gits Search')),
+      appBar: AppBar(title: const Text('Example Gits Player')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
