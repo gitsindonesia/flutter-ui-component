@@ -15,6 +15,7 @@ import 'package:gits_flutter_ui_component/pages/component/gits_image_picker/gits
 import 'package:gits_flutter_ui_component/pages/component/gits_player/gits_player_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_row_separated/gits_row_separated_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_search/gits_search_page.dart';
+import 'package:gits_flutter_ui_component/pages/component/gits_carousel/gits_carousel_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_sliver_list_separated/gits_sliver_list_separated_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_star_rating/gits_star_rating_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_status_message/gits_status_message_page.dart';
@@ -228,6 +229,12 @@ abstract class Routes {
           label: 'Gits Player',
           icon: const Icon(Icons.photo_camera),
           child: const GitsPlayerPage(),
+        ),
+        Navigation(
+          path: '/gits-slider',
+          label: 'Gits Slider',
+          icon: const Icon(Icons.photo_camera),
+          child: const GitsSliderPage(),
         ),
       ],
     ),
