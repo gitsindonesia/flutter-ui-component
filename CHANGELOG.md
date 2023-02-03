@@ -1,3 +1,8 @@
+## 0.15.0
+
+- add component gits carousel
+- add component gits player
+
 ## 0.14.0
 
 - add component gits image picker
