@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_cached_image/gits_cached_image.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_carousel/code_snippet.dart';
-import 'package:gits_flutter_ui_component/pages/component/gits_search/code_snippet.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_carousel/gits_carousel.dart';
 import 'package:gits_flutter_ui_component/widgets/card_highlight.dart';
 import 'package:gits_flutter_ui_component/widgets/device_highlight.dart';
