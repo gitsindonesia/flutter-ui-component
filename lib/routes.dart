@@ -30,6 +30,7 @@ import 'package:gits_flutter_ui_component/pages/extension/date_time/date_time_ex
 import 'package:gits_flutter_ui_component/pages/extension/encrypt/encrypt_extension_page.dart';
 import 'package:gits_flutter_ui_component/pages/foundation/typography/typhography_page.dart';
 import 'package:gits_flutter_ui_component/pages/foundation/validator/validator_value_page.dart';
+import 'package:gits_flutter_ui_component/pages/helper/nominal_rupiah/nomimal_rupiah_helper_page.dart';
 import 'package:gits_flutter_ui_component/pages/pages/request_forgot_password/request_forgot_password_page.dart';
 import 'package:gits_flutter_ui_component/pages/pages/reset_pin/reset_pin_page.dart';
 import 'package:gits_flutter_ui_component/pages/pages/splash/splash_page.dart';
@@ -281,6 +282,17 @@ abstract class Routes {
           label: 'Encrypt',
           icon: const Icon(Icons.volunteer_activism),
           child: const EncryptExtensionPage(),
+        ),
+      ],
+    ),
+    CategoryNavigation(
+      category: 'Helper',
+      navigations: [
+        Navigation(
+          path: '/nominal_rupiah',
+          label: 'Nominal Rupiah',
+          icon: const Icon(Icons.volunteer_activism),
+          child: const NominalRupiahHelperPage(),
         ),
       ],
     ),
