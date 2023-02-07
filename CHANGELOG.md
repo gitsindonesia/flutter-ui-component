@@ -1,3 +1,7 @@
+## 0.16.0
+
+- add component gits dialog
+
 ## 0.15.0
 
 - add component gits carousel

@@ -10,6 +10,7 @@ import 'package:gits_flutter_ui_component/pages/component/gits_column_separated/
 import 'package:gits_flutter_ui_component/pages/component/gits_contact/gits_contact_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_container_shadow/gits_container_shadow_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_date_time_picker/gits_date_time_picker_page.dart';
+import 'package:gits_flutter_ui_component/pages/component/gits_dialog/gits_dialog_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_divider_dash/gits_divider_dash_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_image_picker/gits_image_picker_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_player/gits_player_page.dart';
@@ -104,6 +105,12 @@ abstract class Routes {
           label: 'Gits Button',
           icon: const Icon(Icons.add),
           child: const GitsButtonPage(),
+        ),
+        Navigation(
+          path: '/gits-dialog',
+          label: 'Gits Dialog',
+          icon: const Icon(Icons.add),
+          child: const GitsDialogPage(),
         ),
         Navigation(
           path: '/gits-text-field',
