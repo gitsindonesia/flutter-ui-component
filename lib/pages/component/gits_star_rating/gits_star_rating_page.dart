@@ -40,8 +40,26 @@ class ExampleGitsStarRating extends StatefulWidget {
 }
 
 class _ExampleGitsStarRatingState extends State<ExampleGitsStarRating> {
+  double rating = 3.0;
+  double inputRating = 0.0;
+  var ratingController = TextEditingController(text: "0.0");
 
-  int rating = 3;
+  feedbackValue(int value) {
+    switch (value) {
+      case 1:
+        return "Sangat Kurang";
+      case 2:
+        return "Kurang";
+      case 3:
+        return "Cukup";
+      case 4:
+        return "Bagus";
+      case 5:
+        return "Sangat Bagus";
+      default:
+        return "-";
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,35 +71,88 @@ class _ExampleGitsStarRatingState extends State<ExampleGitsStarRating> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Text(
-                "Penilaian",
+                "Tap Rating Penilaian",
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
               const GitsSpacing.vertical16(),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children:  [
+                children: [
                   GitsStarRating(
+                    rating: rating,
                     isTap: true,
-                    scale: 4.5,
-                    starRating: rating,
-                    padding: const EdgeInsets.symmetric(horizontal: 8),
-                    mainAxisAlignment: MainAxisAlignment.center,
                     result: (value) {
-                      setState(() {
-                        rating = value;
-                      });
+                      rating = value;
+                      setState(() {});
                     },
+                    itemBuilder: (context, index) => const Icon(
+                      Icons.star,
+                      color: Colors.amber,
+                    ),
+                    itemCount: 5,
+                    itemSize: MediaQuery.of(context).size.width / 5.5,
+                    unratedColor: Colors.amber.withAlpha(50),
                   ),
                   const GitsSpacing.vertical16(),
-                  Text(
-                    "Rating : $rating",
-                    style: const TextStyle(
-                      fontSize: 16,
-                    ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Feedback : ${feedbackValue(rating.toInt())}",
+                        style: const TextStyle(
+                          fontSize: 16,
+                        ),
+                      ),
+                      Text(
+                        "Rating : $rating",
+                        style: const TextStyle(
+                          fontSize: 16,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
-              )
+              ),
+              const GitsSpacing.vertical24(),
+              const Text(
+                "Input Penilaian",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+              const GitsSpacing.vertical16(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: TextFormField(
+                  controller: ratingController,
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    border: const OutlineInputBorder(),
+                    hintText: 'Enter rating',
+                    labelText: 'Enter rating',
+                    suffixIcon: MaterialButton(
+                      onPressed: () {
+                        inputRating =
+                            double.parse(ratingController.text);
+                        setState(() {});
+                      },
+                      child: const Text('Rate'),
+                    ),
+                  ),
+                ),
+              ),
+              const GitsSpacing.vertical16(),
+              GitsStarRating(
+                rating: inputRating,
+                isTap: false,
+                itemBuilder: (context, index) => const Icon(
+                  Icons.star,
+                  color: Colors.amber,
+                ),
+                itemCount: 5,
+                itemSize: MediaQuery.of(context).size.width / 5.5,
+                unratedColor: Colors.amber.withAlpha(50),
+              ),
             ],
           ),
         ));

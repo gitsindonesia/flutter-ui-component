@@ -1,87 +1,136 @@
 const String codeSnippetGitsStarRating =
     '''import 'package:flutter/material.dart';
-import '../../../constants/gits_images.dart';
-
-class StarModel {
-  final int index;
-  final String image;
-  StarModel({
-    required this.index,
-    required this.image,
-  });
-}
 
 class GitsStarRating extends StatefulWidget {
-  final int? starRating;
-  final MainAxisAlignment? mainAxisAlignment;
-  final EdgeInsetsGeometry? padding;
-  final double scale;
-  final bool? isTap;
-  final Function(int)? result;
-  const GitsStarRating(
-      {Key? key,
-      this.starRating = 0,
-      this.padding,
-      required this.scale,
-      this.mainAxisAlignment,
-      this.isTap = false,
-      this.result})
-      : super(key: key);
+  const GitsStarRating({
+    Key? key,
+    required this.itemBuilder,
+    this.unratedColor,
+    this.itemCount = 5,
+    this.itemPadding = EdgeInsets.zero,
+    this.itemSize = 40.0,
+    this.physics = const NeverScrollableScrollPhysics(),
+    this.rating = 0.0,
+    this.isTap = false,
+    this.result,
+  }) : super(key: key);
+
+  final IndexedWidgetBuilder itemBuilder;
+  final Color? unratedColor;
+  final int itemCount;
+  final EdgeInsets itemPadding;
+  final double itemSize;
+  final ScrollPhysics physics;
+  final double rating;
+  final bool isTap;
+  final Function(double)? result;
 
   @override
   State<GitsStarRating> createState() => _GitsStarRatingState();
 }
 
 class _GitsStarRatingState extends State<GitsStarRating> {
-  List<StarModel> listStar = [];
+  double _ratingFraction = 0.0;
+  int _ratingNumber = 0;
+
   @override
   void initState() {
     super.initState();
-    addStarRating(widget.starRating!);
-  }
-
-  addStarRating(int? totalStar) {
-    setState(() {
-      listStar.clear();
-      if (totalStar != null) {
-        for (var i = 1; i < 6; i++) {
-          if (i <= totalStar) {
-            listStar.add(StarModel(image: GitsImages.starYellow, index: i));
-          } else {
-            listStar.add(StarModel(image: GitsImages.starGrey, index: i));
-          }
-        }
-      } else {
-        for (var i = 1; i < 6; i++) {
-          listStar
-              .add(StarModel(image: GitsImages.starGrey, index: i));
-        }
-      }
-    });
+    _ratingNumber = widget.rating.truncate() + 1;
+    _ratingFraction = widget.rating - _ratingNumber + 1;
   }
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-        mainAxisAlignment: widget.mainAxisAlignment ?? MainAxisAlignment.start,
-        children: listStar
-            .map((e) => Padding(
-                  padding: widget.padding ??
-                      const EdgeInsets.symmetric(horizontal: 2),
-                  child: GestureDetector(
-                    onTap: widget.isTap!
-                        ? () {
-                            addStarRating(e.index);
-                            widget.result!(e.index);
-                          }
-                        : null,
-                    child: Image.asset(
-                      e.image,
-                      scale: widget.scale,
+    _ratingNumber = widget.rating.truncate() + 1;
+    _ratingFraction = widget.rating - _ratingNumber + 1;
+    return SingleChildScrollView(
+      physics: widget.physics,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: _children,
+      ),
+    );
+  }
+
+  List<Widget> get _children {
+    return List.generate(
+      widget.itemCount,
+      (index) => _buildItems(index),
+    );
+  }
+
+  Widget _buildItems(int index) {
+    return Padding(
+      padding: widget.itemPadding,
+      child: GestureDetector(
+        onTap: widget.isTap
+            ? () {
+                setState(() {
+                  _ratingNumber = index + 1;
+                  _ratingFraction = (index + 1) - _ratingNumber + 1;
+                  widget.result!(_ratingNumber.toDouble());
+                });
+              }
+            : null,
+        child: SizedBox(
+          width: widget.itemSize,
+          height: widget.itemSize,
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              FittedBox(
+                fit: BoxFit.contain,
+                child: index + 1 < _ratingNumber
+                    ? widget.itemBuilder(context, index)
+                    : ColorFiltered(
+                        colorFilter: ColorFilter.mode(
+                          widget.unratedColor ??
+                              Theme.of(context).disabledColor,
+                          BlendMode.srcIn,
+                        ),
+                        child: widget.itemBuilder(context, index),
+                      ),
+              ),
+              if (index + 1 == _ratingNumber)
+                FittedBox(
+                  fit: BoxFit.contain,
+                  child: ClipRect(
+                    clipper: _IndicatorClipper(
+                      ratingFraction: _ratingFraction,
                     ),
+                    child: widget.itemBuilder(context, index),
                   ),
-                ))
-            .toList());
+                ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+//For handle value double rating
+class _IndicatorClipper extends CustomClipper<Rect> {
+  _IndicatorClipper({
+    required this.ratingFraction,
+  });
+
+  final double ratingFraction;
+
+  @override
+  Rect getClip(Size size) {
+    return Rect.fromLTRB(
+      0.0,
+      0.0,
+      size.width * ratingFraction,
+      size.height,
+    );
+  }
+
+  @override
+  bool shouldReclip(_IndicatorClipper oldClipper) {
+    return ratingFraction != oldClipper.ratingFraction;
   }
 }
 ''';
@@ -94,8 +143,26 @@ String codeSnippetExampleGitsStarRating = '''class ExampleGitsStarRating extends
 }
 
 class _ExampleGitsStarRatingState extends State<ExampleGitsStarRating> {
+  double rating = 3.0;
+  double inputRating = 0.0;
+  var ratingController = TextEditingController(text: "0.0");
 
-  int rating = 3;
+  feedbackValue(int value) {
+    switch (value) {
+      case 1:
+        return "Sangat Kurang";
+      case 2:
+        return "Kurang";
+      case 3:
+        return "Cukup";
+      case 4:
+        return "Bagus";
+      case 5:
+        return "Sangat Bagus";
+      default:
+        return "-";
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -107,37 +174,91 @@ class _ExampleGitsStarRatingState extends State<ExampleGitsStarRating> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Text(
-                "Penilaian",
+                "Tap Rating Penilaian",
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
               const GitsSpacing.vertical16(),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children:  [
+                children: [
                   GitsStarRating(
+                    rating: rating,
                     isTap: true,
-                    scale: 4.5,
-                    starRating: rating,
-                    padding: const EdgeInsets.symmetric(horizontal: 8),
-                    mainAxisAlignment: MainAxisAlignment.center,
                     result: (value) {
-                      setState(() {
-                        rating = value;
-                      });
+                      rating = value;
+                      setState(() {});
                     },
+                    itemBuilder: (context, index) => const Icon(
+                      Icons.star,
+                      color: Colors.amber,
+                    ),
+                    itemCount: 5,
+                    itemSize: MediaQuery.of(context).size.width / 5.5,
+                    unratedColor: Colors.amber.withAlpha(50),
                   ),
                   const GitsSpacing.vertical16(),
-                  Text(
-                    "Rating : rating",
-                    style: const TextStyle(
-                      fontSize: 16,
-                    ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Feedback : feedbackValue(rating.toInt())",
+                        style: const TextStyle(
+                          fontSize: 16,
+                        ),
+                      ),
+                      Text(
+                        "Rating : rating",
+                        style: const TextStyle(
+                          fontSize: 16,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
-              )
+              ),
+              const GitsSpacing.vertical24(),
+              const Text(
+                "Input Penilaian",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+              const GitsSpacing.vertical16(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: TextFormField(
+                  controller: ratingController,
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    border: const OutlineInputBorder(),
+                    hintText: 'Enter rating',
+                    labelText: 'Enter rating',
+                    suffixIcon: MaterialButton(
+                      onPressed: () {
+                        inputRating =
+                            double.parse(ratingController.text);
+                        setState(() {});
+                      },
+                      child: const Text('Rate'),
+                    ),
+                  ),
+                ),
+              ),
+              const GitsSpacing.vertical16(),
+              GitsStarRating(
+                rating: inputRating,
+                isTap: false,
+                itemBuilder: (context, index) => const Icon(
+                  Icons.star,
+                  color: Colors.amber,
+                ),
+                itemCount: 5,
+                itemSize: MediaQuery.of(context).size.width / 5.5,
+                unratedColor: Colors.amber.withAlpha(50),
+              ),
             ],
           ),
         ));
   }
-}''';
+}
+''';
