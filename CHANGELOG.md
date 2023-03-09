@@ -1,3 +1,7 @@
+## 0.17.0
+
+- update and adjustment component gits star rating
+
 ## 0.16.0
 
 - add component gits dialog
