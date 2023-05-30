@@ -47,6 +47,21 @@ class GitsStatusMessage extends StatelessWidget {
         fontWeight = FontWeight.w400,
         super(key: key);
 
+  const GitsStatusMessage.error({
+    Key? key,
+    required BuildContext context,
+    this.text,
+    this.child,
+    this.onTap,
+  })  : assert(text != null || child != null),
+        backgroundColor = const Color(0xFFFFECEA),
+        textColor = const Color(0xFFEB5757),
+        iconColor = const Color(0xFFEB5757),
+        iconData = Icons.cancel,
+        center = false,
+        fontWeight = FontWeight.w400,
+        super(key: key);
+
   final String? text;
   final Color backgroundColor;
   final Color iconColor;
