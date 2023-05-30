@@ -5,6 +5,7 @@ import 'package:gits_flutter_ui_component/pages/component/gits_bottom_sheet/gits
 import 'package:gits_flutter_ui_component/pages/component/gits_button/gits_button_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_cached_image/gits_cached_image_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_calendar/gits_calendar_page.dart';
+import 'package:gits_flutter_ui_component/pages/component/gits_chips_input/pages/gits_chips_input_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_circular_loading/gits_circular_loading_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_column_separated/gits_column_separated_page.dart';
 import 'package:gits_flutter_ui_component/pages/component/gits_contact/gits_contact_page.dart';
@@ -117,6 +118,12 @@ abstract class Routes {
           label: 'Gits Text Field',
           icon: const Icon(Icons.add),
           child: const GitsTextFieldPage(),
+        ),
+        Navigation(
+          path: '/gits-chips-input',
+          label: 'Gits Chips Input',
+          icon: const Icon(Icons.input),
+          child: const GitsChipsInputPage(),
         ),
         Navigation(
           path: '/shimmer',

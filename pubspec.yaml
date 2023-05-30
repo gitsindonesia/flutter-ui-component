@@ -39,7 +39,7 @@ dependencies:
   url_launcher: ^6.1.6
   permission_handler: ^10.2.0
   equatable: ^2.0.5
-  gits_extension: ^0.0.4
+  gits_extension: ^0.0.5
   encrypt: ^5.0.1
 
 dev_dependencies:

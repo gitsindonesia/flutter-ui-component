@@ -1,3 +1,7 @@
+## 0.18.0
+
+- add component gits chip input
+
 ## 0.17.0
 
 - update and adjustment component gits star rating
